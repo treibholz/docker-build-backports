@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM debian:wheezy
 
 ENV DEBIAN_FRONTEND noninteractive
 
