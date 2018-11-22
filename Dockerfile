@@ -1,4 +1,4 @@
-FROM buildpack-deps:stretch
+FROM debian:stretch
 
 ENV DEBIAN_FRONTEND noninteractive
 
