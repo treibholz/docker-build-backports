@@ -13,6 +13,7 @@ RUN apt-get update && \
     useradd -m -u 1000 --skel /etc/skel builder
 
 COPY sudoers /etc/sudoers.d/00-builder
+RUN chmod 644 /etc/sudoers.d/00-builder
 
 WORKDIR /home/builder
 USER builder
