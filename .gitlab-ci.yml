@@ -18,6 +18,20 @@ docker:
   only:
     - master
 
+docker-buster:
+  image: docker:latest
+  stage: build
+  tags:
+    - 'docker-build'
+  script:
+    - docker login -u gitlab-ci-token -p ${CI_BUILD_TOKEN} ${CI_REGISTRY}
+    - docker build -t ${CI_REGISTRY_IMAGE} .
+    - docker push ${CI_REGISTRY_IMAGE}:buster
+  only:
+    - buster
+
+
+
 docker-release:
   image: docker:latest
   stage: build
