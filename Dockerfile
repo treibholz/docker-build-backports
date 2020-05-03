@@ -1,7 +1,8 @@
 FROM debian:buster
 
 ENV DEBIAN_FRONTEND noninteractive
-
+COPY uxix_public.key /root/uxix_public.key
+RUN apt-key add /root/uxix_public.key
 COPY sources.list /etc/apt/sources.list
 # eatmydata speeds up things.
 RUN apt-get update && \

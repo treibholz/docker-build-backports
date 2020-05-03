@@ -1,0 +1,3 @@
+Package: *
+Pin: origin debian.uxix.de
+Pin-Priority: 100
